@@ -1,13 +1,20 @@
 """This code converts temperatures between °F and °C"""
 
-temperature = int(input("Please write the temperature"))
-mode = input("Please indicate if it's in Fahrenheit or Celsius (F/C)?")
+
+import sys
+
+temperature = int(sys.argv[2])
+mode = sys.argv[1]
+
+# temperature = int(input("Please write the temperature"))
+# mode = input("Please indicate if it's in Fahrenheit or Celsius (F/C)?")
+
 
 if mode == 'F':
     celsius = (temperature - 32) * 5/9
-    print(celsius)
+    print(f"{celsius:.3}°C")
 elif mode == 'C':
     fahrenheit = temperature * 9/5 + 32
-    print(fahrenheit)
+    print(round(fahrenheit, 2), "°F")
 else:
     mode = input("ERROR: Please indicate if it's in Fahrenheit or Celsius (F/C)?")
